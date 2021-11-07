@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>11班青年大学习图片上传</title>
+</head>
+<body background="../img/login-background.jpg">
+<div class="main">
+    <form action="gotoAction" enctype="multipart/form-data" method="post" >
+        <table >
+            <tr>
+                <font size="15">请选择你的姓名：</font>
+                <select name="name" style="font-size:50px">
+                    <option value="">请选择你的学号和姓名</option>
+                    <option th:each="item:${departmentList}"
+                            th:value="${item.value}" th:text="${item.value}" >
+                    </option>
+                </select>
+            </tr>
+            <br>
+            <tr>
+            <tr>
+                <br>
+
+
+                <input id="file" style="font-size:50px;" type="file"  name="file">
+            </tr>
+            <br>
+            <tr>
+                <br>
+
+               <button  th:text="${postFile}" class="upload_file"></button>
+            </tr>
+        </table>
+    </form>
+</div>
+<script type="text/javascript" >
+</script>
+</body>
+
+</html>
+
+<style rel="stylesheet/scss" lang="scss">
+    .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        vertical-align: middle;
+        height: 100%;
+        margin: auto;
+        width: 100%;
+
+
+    }
+
+    .upload_file{
+        color:#333333;
+        background-color: #fff;
+        padding:20px 30px;
+        margin-right:10px;
+        outline:none;
+        width: 60%;
+        height: 60%;
+        border:1px solid #ccc;
+    }
+
+</style>
+
